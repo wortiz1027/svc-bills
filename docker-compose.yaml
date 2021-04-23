@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  server-discovery-services:
+    image: wortiz1027/svc-bills:latest
+    container_name: svc-bills
+    hostname: svc-bills
+    restart: always
+    ports:
+      - 8081:8081
+      - 6181:6181
+    environment:
+      - SERVER_CONFIG=http://server-config:7070
+      - SERVER_DISCOVERY=http://server-discovery:7071/eureka
+      - EUREKA_HOST=server-discovery
+      - BROKER_HOST=server-broker
+    networks:
+      - ntw_backend
+networks:
+  ntw_backend:
+    external: true
