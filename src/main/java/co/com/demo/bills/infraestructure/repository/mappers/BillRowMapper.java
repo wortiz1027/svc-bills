@@ -14,7 +14,7 @@ public class BillRowMapper implements RowMapper<Bill> {
                 rs.getString("BILL_ID"),
                 rs.getString("BILL_SEQUENCE"),
                 rs.getDate("BILL_DATETIME").toLocalDate(),
-                rs.getString("CLIENT_ID"),
-                rs.getDouble("BILL_TOTAL"));
+                rs.getString("CLIENT_DNI"),
+                rs.getBigDecimal("BILL_TOTAL"));
     }
 }

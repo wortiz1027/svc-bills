@@ -2,6 +2,8 @@ package co.com.demo.bills.domain.controller;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
 public class Product implements java.io.Serializable {
 
@@ -9,6 +11,6 @@ public class Product implements java.io.Serializable {
     private String Code;
     private String name;
     private String description;
-    private double price;
+    private BigDecimal price;
 
 }

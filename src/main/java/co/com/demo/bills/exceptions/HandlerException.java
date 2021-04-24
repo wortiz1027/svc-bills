@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import java.time.LocalDateTime;
 
 @ControllerAdvice
-public class BillHandlerException {
+public class HandlerException {
 
     @ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<ResponseException> productError(ProductNotFoundException ex) {
