@@ -188,10 +188,11 @@ public class BillServices implements BillBehavior {
     }
 
     private Optional<List<Product>> callProductsInformation(String codes) {
-        List<ServiceInstance> instances = discoveryClient.getInstances(servicesId);
-        ServiceInstance serviceInstance = instances.get(0);
-        String url = serviceInstance.getUri().toString();
-        url = url + productsUri;
+        //List<ServiceInstance> instances = discoveryClient.getInstances(servicesId);
+        //ServiceInstance serviceInstance = instances.get(0);
+        //String url = serviceInstance.getUri().toString();
+        String url = String.format("http://%s:8083/%s", servicesId, productsUri);
+        //url = url + productsUri;
 
         ResponseEntity<co.com.demo.bills.domain.controller.Response> response = null;
 
