@@ -6,13 +6,13 @@ services:
     hostname: svc-bills
     restart: always
     ports:
-      - 8081:8081
-      - 6181:6181
+      - 8081
+      - 6181
     environment:
       - SERVER_CONFIG=http://server-config:7070
       - SERVER_DISCOVERY=http://server-discovery:7071/eureka
       - EUREKA_HOST=server-discovery
-      - BROKER_HOST=server-broker
+      - SERVER_BROKER=server-broker
     networks:
       - ntw_backend
 networks:
